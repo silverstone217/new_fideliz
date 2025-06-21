@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "new_fideliz_app",
+    "name": "Fideliz",
     "slug": "new_fideliz_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "newfidelizapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -16,7 +16,12 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.silverstone217.new_fideliz_app"
     },
     "web": {
       "bundler": "metro",
@@ -25,18 +30,33 @@
     },
     "plugins": [
       "expo-router",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Accepter que $(PRODUCT_NAME)  accede a votre  camera",
+          "microphonePermission": "Accepter que $(PRODUCT_NAME) accede a votre microphone",
+          "recordAudioAndroid": true
+        }
+      ],
       [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#4f90e0"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ee3890cc-0e65-41e4-a459-8fd0f1415a26"
+      }
     }
   }
 }
